@@ -1,0 +1,61 @@
+*{
+margin:0;
+padding:0;
+}
+body{
+background:skyblue;
+text-align:center;
+}
+small{
+background:black;
+color:#fff;
+font-size:1em;
+}
+.container{
+width:80%;
+margin:auto;
+}
+img{
+width:20%;
+float:right;
+margin-top:18px;
+}
+
+label{
+display:block;
+font-size:2em;
+text-align:center;
+}
+input[type=text], input[type=email], input[type=tel]{
+font-size:18px;
+padding:7px;
+width:78%;
+}
+button{
+background:green;
+color:#fff;
+width:50%;
+border:none;
+border-radius:8px;
+font-size:2em;
+margin-top:10px;
+cursor:pointer;
+}
+
+table{
+    border-collapse:collapse;
+    width:100%;
+    border: 2px solid red;
+}
+th, td{
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even){
+    background: #f2f2f2;
+}
+
+th{
+    background: #4caf50;
+    color:#fff;
+}
