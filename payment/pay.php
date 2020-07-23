@@ -1,5 +1,10 @@
 <?php
-
+/*Attention : 
+I have a more indepth course on paystack integration where I built projects using paystack like:
+1. Donation application
+2. User subscription etc 
+CONTACT Me now if you want it: thelordofapps@gmail.com
+*/
 $amount = 1500;
 //Sanitize form inputs from harmful data
  $sanitizer = filter_var_array($_POST, FILTER_SANITIZE_STRING);
@@ -45,22 +50,38 @@ $_SESSION['price']  = $amount;
  
 <script>
   function payPageWithPaystack(){
-const api = "pk_test_5968bf0502a328d1ac0a7696423c56a495b409c1";
+const api = "Add_Your_Puplic_Key_Here";
     var handler = PaystackPop.setup({
       key: api,
       email: "<?php echo $email; ?>",
       amount: <?php echo $amount*100; ?>,
       currency: "NGN",
       ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
-      firstname: '<?php echo $first_name; ?>',
-      lastname: '<?php echo $last_name; ?>',
+      firstname: "<?php echo". $first_name."; ?>",
+      lastname: "<?php echo $last_name; ?>",
+      phone: "<?php echo $phone; ?>",
       // label: "Optional string that replaces customer email"
       metadata: {
          custom_fields: [
             {
-                display_name: "<?php echo $first_name; ?>",
-                variable_name: "<?php echo $last_name; ?>",
+                display_name: "First Name:",
+                variable_name: "first_name",
+                value: "<?php echo $first_name; ?>"
+            },
+             {
+                display_name: "Last Name:",
+                variable_name: "last_name",
+                value: "<?php echo $last_name; ?>"
+            },
+             {
+                display_name: "Phone Number:",
+                variable_name: "phone_number",
                 value: "<?php echo $phone; ?>"
+            },
+             {
+                display_name: "Product Name",
+                variable_name: "product_name",
+                value: "<?php echo $product_name; ?>"
             }
          ]
       },
